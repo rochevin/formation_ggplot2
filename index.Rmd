@@ -606,9 +606,6 @@ p3.training
 
 ---
 
-```{r,echo=F}
-theme_set(theme_classic(base_size=14))
-```
 
 
 ### The three key components of every ggplot2
@@ -838,8 +835,8 @@ knitr::include_graphics("imgs/ggdisplay.gif")
 ```{r,eval=F}
 ggplot(data = iris.tbl,
        aes(x=Part,y=obs)) +
-    geom_boxplot(aes(`fill = "grey40"`,
-                     `col = "steelblue"`)) +
+    geom_boxplot(`fill = "grey40"`,
+                     `col = "steelblue"`) +
   geom_jitter(`alpha=0.4`)
 ```
 
@@ -883,6 +880,8 @@ ggplot(data = iris.tbl,
 ### Uses of aesthetics within `aes`
 
 
+
+
 ```{r,eval=F}
 ggplot(data = iris.tbl,
        aes(x=Part,y=obs,`col=Species`,`shape=Metric`)) +
@@ -897,13 +896,11 @@ ggplot(data = iris.tbl,
   geom_jitter(alpha=0.4) + theme(legend.position ="bottom")
 ```
 
---
-
-`aes()` can be called within `ggplot` function or within each `geom_*`.
 
 ---
 ### Uses of aesthetics within `aes`
 
+`aes()` can be called within `ggplot` function or within each `geom_*`.
 
 ```{r,eval=F}
 ggplot(data = iris.tbl,
@@ -925,22 +922,50 @@ ggplot(data = iris.tbl,
 
 
 ```{r,eval=F}
-ggplot(data = iris.tbl,
+p_boxplot <- ggplot(data = iris.tbl,
        aes(x=Part,y=obs)) +
     geom_boxplot() +
   geom_jitter(aes(`col=Species`,`shape=Metric`),alpha=0.4) +
   `facet_wrap(~Metric)`
+p_boxplot
 ```
 
 ```{r,echo=F,fig.height=3.5,fig.width=8,fig.align='center'}
-ggplot(data = iris.tbl,
+p_boxplot <- ggplot(data = iris.tbl,
        aes(x=Part,y=obs)) +
     geom_boxplot(outlier.shape = NA) +
   geom_jitter(aes(col=Species,shape=Metric),alpha=0.4) + theme(legend.position ="bottom") +
   facet_wrap(~Metric)
+p_boxplot
 ```
 
 Strength of `ggplot2`: Combining various aesthetics allow to display __multiples variable in one plot easily.__
+
+---
+
+### How to zoom/set axis with `ggplot2`
+
+#### __Use `coord_cartesian` to zoom, not `xlim`, `ylim`, or `scale_*`__
+
+.pull-left[
+```{r}
+p_boxplot_1 <- p_boxplot + ylim(c(2,4))
+```
+]
+
+.pull-right[
+```{r}
+p_boxplot_2 <- p_boxplot +
+  coord_cartesian(ylim=c(2,4))
+```
+]
+
+```{r,fig.height=6,fig.width=16,fig.align='center',echo=F}
+require(patchwork)
+(p_boxplot + ggtitle("base plot")+ geom_hline(yintercept = c(2,4),linetype="dashed")) + (p_boxplot_1  + ggtitle("with ylim")) + (p_boxplot_2 + ggtitle("with coord_cartesian"))
+```
+
+
 
 
 
@@ -1007,6 +1032,29 @@ cowplot::plot_grid(p1,p5,p6,p2,p3,p4)
 
 ---
 
+##Themes
+
+```{r,echo=F}
+p <- iris %>%
+    ggplot(aes(x=Petal.Width,y=Petal.Length)) +
+    geom_point(aes(col=Species,size = Sepal.Length))
+```
+
+
+.pull-left[
+```{r, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
+p
+```
+]
+
+
+.pull-right[
+```{r, fig.height=8, fig.width=8, message=FALSE, warning=FALSE}
+p + theme_classic()
+```
+]
+
+---
 
 ##Themes
 
@@ -1128,7 +1176,33 @@ p + theme_minimal(base_size=6) + theme(
 
 ]
 
+---
 
+## Save your plot
+```{r}
+
+```
+
+.pull-left[
+### Using `pdf()`, `png()`, `svg()`, ...
+```{r,eval=F}
+pdf("myplot.pdf",height=4,width=4)
+print(p)
+dev.off()
+```
+]
+
+
+.pull-right[
+### Using `ggplot2::ggsave`
+```{r,eval=F}
+ggplot2::ggsave("myplot.pdf",p,height=4,width=4)
+```
+]
+
+* `height` and `width` are in inches for `pdf()`, but can be changed with `ggsave(units="px")`.
+* `ggsave` will figure what format you want based on the file extension (".pdf").
+* `dpi` parameter allow to change the plot resolution: "retina" (320), "print" (300), or "screen" (72).
 ---
 
 .left-column[
@@ -1304,6 +1378,19 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
 
 ---
 
+### `ggforce::facet_zoom()` for my zooming issue
+
+```{r,fig.align='center',fig.height=6,fig.width=12}
+ggplot(data = filter(iris.tbl,Metric == "Width"),
+                    aes(x=Part,y=obs)) +
+    geom_boxplot(outlier.shape = NA) +
+    geom_jitter(aes(col=Species,shape=Metric),alpha=0.4) + theme(legend.position ="bottom") +
+    facet_zoom(ylim = c(2, 4))
+```
+
+
+---
+
 ### `ggforce::facet_matrix()`
 
 
@@ -1458,9 +1545,9 @@ iris.tbl %>%
 ] 
 .right-column[
 
-1. Assemble the plot you did together using `patchwork`.
+1. Assemble the plots you did previously using `patchwork`.
 2. Try some functions from `ggforce`.
-3 __Bonus__: Enhance your plots using `ggtext`.
+3. __Bonus__: Enhance your plots using `ggtext`.
 
 ]
 

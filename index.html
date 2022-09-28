@@ -169,21 +169,21 @@ A tidy dataset :
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; John Smith &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Jane Doe &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Mary Johnson &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -220,21 +220,21 @@ treatments.2 &lt;- t(treatments)
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; treatment_a &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; treatment_b &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; treatment_c &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -273,27 +273,27 @@ treatments.3 &lt;- tidyr::pivot_longer(treatments.3,-person,names_to = "treatmen
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #E41A1C !important;text-align: c;"&gt;John Smith&lt;/span&gt; &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FC8D59 !important;text-align: c;"&gt;treatment_a&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;22&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;15&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #E41A1C !important;text-align: c;"&gt;John Smith&lt;/span&gt; &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FFFFBF !important;text-align: c;"&gt;treatment_b&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;16&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;15&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #E41A1C !important;text-align: c;"&gt;John Smith&lt;/span&gt; &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #99D594 !important;text-align: c;"&gt;treatment_c&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;13&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;25&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #377EB8 !important;text-align: c;"&gt;Jane Doe&lt;/span&gt; &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FC8D59 !important;text-align: c;"&gt;treatment_a&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;18&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;19&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #377EB8 !important;text-align: c;"&gt;Jane Doe&lt;/span&gt; &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FFFFBF !important;text-align: c;"&gt;treatment_b&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;25&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;20&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #377EB8 !important;text-align: c;"&gt;Jane Doe&lt;/span&gt; &lt;/td&gt;
@@ -303,17 +303,17 @@ treatments.3 &lt;- tidyr::pivot_longer(treatments.3,-person,names_to = "treatmen
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #4DAF4A !important;text-align: c;"&gt;Mary Johnson&lt;/span&gt; &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FC8D59 !important;text-align: c;"&gt;treatment_a&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;25&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;19&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #4DAF4A !important;text-align: c;"&gt;Mary Johnson&lt;/span&gt; &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FFFFBF !important;text-align: c;"&gt;treatment_b&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;25&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;12&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #4DAF4A !important;text-align: c;"&gt;Mary Johnson&lt;/span&gt; &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; &lt;span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #99D594 !important;text-align: c;"&gt;treatment_c&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;20&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: black !important;text-align: c;"&gt;21&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -914,7 +914,6 @@ iris.tbl &lt;- readr::read_tsv("iris.tsv") %&gt;%
 
 
 
-
 ### The three key components of every ggplot2
 
 * __data__: the dataset who's need to be plotted.
@@ -948,7 +947,7 @@ ggplot(`data = iris.tbl`,
 ]
 .pull-right[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-29-1.svg" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-28-1.svg" width="504" /&gt;
 
 
 
@@ -978,7 +977,7 @@ ggplot(`data = iris.tbl`,
 ]
 .pull-right[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-31-1.svg" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-30-1.svg" width="504" /&gt;
 
 
 
@@ -1008,7 +1007,7 @@ ggplot(`data = iris.tbl`,
 ]
 .pull-right[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-33-1.svg" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-32-1.svg" width="504" /&gt;
 
 
 
@@ -1038,7 +1037,7 @@ ggplot(`data = iris.tbl`,
 ]
 .pull-right[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-35-1.svg" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-34-1.svg" width="504" /&gt;
 
 
 
@@ -1076,7 +1075,7 @@ __Facetting__:
 ]
 .pull-right[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-37-1.svg" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-36-1.svg" width="504" /&gt;
 
 
 
@@ -1130,12 +1129,12 @@ p &lt;- p +  `geom_jitter(width=0.15)`
 ```r
 ggplot(data = iris.tbl,
        aes(x=Part,y=obs)) +
-    geom_boxplot(aes(`fill = "grey40"`,
-                     `col = "steelblue"`)) +
+    geom_boxplot(`fill = "grey40"`,
+                     `col = "steelblue"`) +
   geom_jitter(`alpha=0.4`)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-41-1.svg" width="288" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-40-1.svg" width="288" /&gt;
 
 ]
 
@@ -1153,7 +1152,7 @@ ggplot(data = iris.tbl,
   geom_jitter(alpha=0.4)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-43-1.svg" width="288" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-42-1.svg" width="288" /&gt;
 
 
 
@@ -1167,6 +1166,8 @@ ggplot(data = iris.tbl,
 
 
 
+
+
 ```r
 ggplot(data = iris.tbl,
        aes(x=Part,y=obs,`col=Species`,`shape=Metric`)) +
@@ -1174,15 +1175,13 @@ ggplot(data = iris.tbl,
   geom_jitter(alpha=0.4)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-45-1.svg" width="576" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-44-1.svg" width="576" style="display: block; margin: auto;" /&gt;
 
---
-
-`aes()` can be called within `ggplot` function or within each `geom_*`.
 
 ---
 ### Uses of aesthetics within `aes`
 
+`aes()` can be called within `ggplot` function or within each `geom_*`.
 
 
 ```r
@@ -1192,7 +1191,7 @@ ggplot(data = iris.tbl,
   geom_jitter(aes(`col=Species`,`shape=Metric`),alpha=0.4)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-47-1.svg" width="576" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-46-1.svg" width="576" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -1201,16 +1200,42 @@ ggplot(data = iris.tbl,
 
 
 ```r
-ggplot(data = iris.tbl,
+p_boxplot &lt;- ggplot(data = iris.tbl,
        aes(x=Part,y=obs)) +
     geom_boxplot() +
   geom_jitter(aes(`col=Species`,`shape=Metric`),alpha=0.4) +
   `facet_wrap(~Metric)`
+p_boxplot
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-49-1.svg" width="576" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-48-1.svg" width="576" style="display: block; margin: auto;" /&gt;
 
 Strength of `ggplot2`: Combining various aesthetics allow to display __multiples variable in one plot easily.__
+
+---
+
+### How to zoom/set axis with `ggplot2`
+
+#### __Use `coord_cartesian` to zoom, not `xlim`, `ylim`, or `scale_*`__
+
+.pull-left[
+
+```r
+p_boxplot_1 &lt;- p_boxplot + ylim(c(2,4))
+```
+]
+
+.pull-right[
+
+```r
+p_boxplot_2 &lt;- p_boxplot +
+  coord_cartesian(ylim=c(2,4))
+```
+]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-51-1.svg" width="1152" style="display: block; margin: auto;" /&gt;
+
+
 
 
 
@@ -1247,6 +1272,31 @@ print(p)
 
 ---
 
+##Themes
+
+
+
+
+.pull-left[
+
+```r
+p
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-53-1.svg" width="576" /&gt;
+]
+
+
+.pull-right[
+
+```r
+p + theme_classic()
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-54-1.svg" width="576" /&gt;
+]
+
+---
 
 ##Themes
 
@@ -1297,7 +1347,33 @@ p
 
 ]
 
+---
 
+## Save your plot
+
+
+.pull-left[
+### Using `pdf()`, `png()`, `svg()`, ...
+
+```r
+pdf("myplot.pdf",height=4,width=4)
+print(p)
+dev.off()
+```
+]
+
+
+.pull-right[
+### Using `ggplot2::ggsave`
+
+```r
+ggplot2::ggsave("myplot.pdf",p,height=4,width=4)
+```
+]
+
+* `height` and `width` are in inches for `pdf()`, but can be changed with `ggsave(units="px")`.
+* `ggsave` will figure what format you want based on the file extension (".pdf").
+* `dpi` parameter allow to change the plot resolution: "retina" (320), "print" (300), or "screen" (72).
 ---
 
 .left-column[
@@ -1334,7 +1410,7 @@ p
 
 ## Enhance your plots using `ggplot2` best extensions
 
-&lt;img src="index_files/figure-html/unnamed-chunk-51-1.svg" width="1008" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-59-1.svg" width="1008" style="display: block; margin: auto;" /&gt;
 
 * Take a look at the gallery: https://exts.ggplot2.tidyverse.org/gallery/
 * Or for a list of usefull ggplot2 packages/extensions: https://github.com/erikgahner/awesome-ggplot2
@@ -1383,7 +1459,7 @@ require(patchwork)
 p1 + p2
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-53-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-61-1.svg" width="864" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -1400,7 +1476,7 @@ patchwork +
   plot_annotation(tag_levels = 'A')  &amp; theme(legend.position = "bottom") 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-54-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-62-1.svg" width="864" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -1439,7 +1515,7 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
   facet_zoom(xy = Species == "versicolor")
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-55-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-63-1.svg" width="864" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -1453,7 +1529,23 @@ ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
   facet_zoom(xlim = c(2, 4))
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-56-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-64-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+
+---
+
+### `ggforce::facet_zoom()` for my zooming issue
+
+
+```r
+ggplot(data = filter(iris.tbl,Metric == "Width"),
+                    aes(x=Part,y=obs)) +
+    geom_boxplot(outlier.shape = NA) +
+    geom_jitter(aes(col=Species,shape=Metric),alpha=0.4) + theme(legend.position ="bottom") +
+    facet_zoom(ylim = c(2, 4))
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-65-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -1468,7 +1560,7 @@ iris %&gt;% ggplot(aes(col=Species,fill=Species)) +
   facet_matrix(vars(-Species),layer.diag = 2)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-57-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-66-1.svg" width="864" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -1483,7 +1575,7 @@ iris %&gt;% pivot_longer(-Species) %&gt;%
   ggforce::facet_col(~name)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-58-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-67-1.svg" width="864" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -1497,7 +1589,7 @@ iris %&gt;% ggplot() +
   facet_matrix(rows = vars(-Species),cols = vars(Species))
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-59-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-68-1.svg" width="864" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -1511,7 +1603,7 @@ ggplot(iris, aes(Petal.Length, Petal.Width)) +
   geom_point()
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-60-1.svg" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-69-1.svg" width="864" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -1545,7 +1637,7 @@ p3 +
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-62-1.svg" width="720" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-71-1.svg" width="720" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -1574,7 +1666,7 @@ iris.tbl %&gt;%
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-64-1.svg" width="720" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-73-1.svg" width="720" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -1585,9 +1677,9 @@ iris.tbl %&gt;%
 ] 
 .right-column[
 
-1. Assemble the plot you did together using `patchwork`.
+1. Assemble the plots you did previously using `patchwork`.
 2. Try some functions from `ggforce`.
-3 __Bonus__: Enhance your plots using `ggtext`.
+3. __Bonus__: Enhance your plots using `ggtext`.
 
 ]
 
@@ -1596,7 +1688,7 @@ iris.tbl %&gt;%
 ]
 .pull-right[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-65-1.svg" width="300" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-74-1.svg" width="300" style="display: block; margin: auto;" /&gt;
 
 
 ]
