@@ -587,7 +587,7 @@ print(p_timer)
 iris.tbl <- readr::read_tsv("iris.tsv") %>%
   dplyr::mutate(Individual = 1:dplyr::n()) %>% 
   tidyr::pivot_longer(-Species:-Individual,names_to = "Type",values_to = "obs") %>%
-  tidyr::separate(Type,into = c("Part","Metric"),se="\\.")
+  tidyr::separate(Type,into = c("Part","Metric"),sep="\\.")
 ```
 
 ```{r,echo=F}
@@ -1583,4 +1583,65 @@ print(p_timer)
 
 ]
 
+
+---
+
+.left-column[
+## `r icons::fontawesome("laptop-code", style = "solid")` Your turn
+] 
+.right-column[
+
+1. Load the data from the `DE_result_edgeR_1_0.05_CvsC_OHT_table.tsv` file.
+2. do a scatterplot between `logFC` and `-log10(p.adj)` (It's called a volcano plot).
+  * You can use `?geom_hline` and `?geom_vline` to vizualise the treshold you want.
+3. Classify the genes using the fold change (`logFC`) and the p-value (`p.adj`) with 3 class: `Upregulated`, `Downregulated` and `None`.
+  * `Upregulated` mean that the expression increase after treatment `logFC > 1`.
+  * `Downregulated` mean that the expression decrease after treatment `logFC < -1`.
+  * `None` mean that the changes are not significant (`p.adj>=0.05`).
+  * You can use any treshold you want but I'll take `p.adj< 0.05` and `abs(logFC) > 1`.
+4. Annotate the number of genes by category.
+5. Build a specific color code by annotation to display on the plot and on the legend.
+  * Try to associate a color with a class with `mutate` and `case_when`.
+  * You can use `ggtext` to add color to axis/label.
+  * And `scale_color_identity` to match the color you want.
+6. Label genes top of their respective category (need `ggrepel` package).
+7. Enhance your plot using a custom theme and by adding title/subtitle ...
+
+]
+
+.pull-left[
+#### __Need some help ?__
+
+* Try to look at the cheatsheets: https://www.rstudio.com/resources/cheatsheets/. 
+* Take a look at the [wiki](https://github.com/rochevin/formation_ggplot2/wiki/Produce-awesome-plots-using-ggplot2#solution-for-differential-expression-analysis)
+
+]
+.pull-right[
+
+```{r ggplot25,echo=F, fig.height=2, fig.width=2, message=FALSE, warning=FALSE,dev.args = list(bg = "transparent"),fig.align="center",dpi=150,fig.retina=3}
+minutes <- data_frame(y = 0:60,x=1)
+
+hours <- filter(minutes, y %% 5 == 0)
+
+
+my.time <- 10
+my.time.str <- glue::glue("{my.time} minutes")
+
+
+p_timer <- ggplot(minutes,aes(x = x, y = y)) +
+  geom_bar(data=filter(minutes,y==my.time),stat="identity", width=1, col="black",fill="#bdc3c7",alpha=0.7) +
+  geom_point(data = minutes,aes(x=1.5)) +
+  geom_point(data = hours, aes(x = 1.5, y = y,col=y),
+             size = 4, show.legend = FALSE) +
+  geom_text(aes(y = 30, x = 0.5, label = my.time.str), vjust = 1, size = 4,col="black") +
+  coord_polar("y", start=0) +
+  # scale_color_viridis_c() +
+  scale_color_gradient2(low = "black",mid="#2ecc71",high="#e74c3c") +
+  theme_void() + 
+  theme(legend.position="none",panel.background = element_rect(fill = "transparent", colour = NA),  plot.background = element_rect(fill = "transparent", colour = NA))
+print(p_timer)
+```
+
+
+]
 
